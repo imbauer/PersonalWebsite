@@ -14,6 +14,7 @@ pipeline {
                         scp -o StrictHostKeyChecking=no -i ${PRIVATEKEY} -r $file imbauerc@imbauer.com:/home3/imbauerc/public_html/
                         elif [[ -f $PASSED ]]; then
                             scp -o StrictHostKeyChecking=no -i ${PRIVATEKEY} $file imbauerc@imbauer.com:/home3/imbauerc/public_html/$file
+                        fi
                     done
                     '''
                     sh "ssh -o StrictHostKeyChecking=no -i ${PRIVATEKEY} imbauerc@imbauer.com ls"
