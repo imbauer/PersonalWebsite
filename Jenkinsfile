@@ -10,7 +10,10 @@ pipeline {
                     sh "ls"
                     sh '''
                     for file in **; do
-                        scp -o StrictHostKeyChecking=no -i ${PRIVATEKEY} -r $file imbauerc@imbauer.com:/home3/imbauerc/public_html/$file
+                        if [[ -d $PASSED ]]; then
+                        scp -o StrictHostKeyChecking=no -i ${PRIVATEKEY} -r $file imbauerc@imbauer.com:/home3/imbauerc/public_html/
+                        elif [[ -f $PASSED ]]; then
+                            scp -o StrictHostKeyChecking=no -i ${PRIVATEKEY} $file imbauerc@imbauer.com:/home3/imbauerc/public_html/$file
                     done
                     '''
                     sh "ssh -o StrictHostKeyChecking=no -i ${PRIVATEKEY} imbauerc@imbauer.com ls"
