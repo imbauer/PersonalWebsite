@@ -10,9 +10,9 @@ pipeline {
                     sh "ls"
                     sh '''
                     for file in **; do
-                        if [[ -d $file ]]; then
+                        if [ -d $file ]; then
                             scp -o StrictHostKeyChecking=no -i ${PRIVATEKEY} -r $file imbauerc@imbauer.com:/home3/imbauerc/public_html/
-                        elif [[ -f $file ]]; then
+                        elif [ -f $file ]; then
                             scp -o StrictHostKeyChecking=no -i ${PRIVATEKEY} $file imbauerc@imbauer.com:/home3/imbauerc/public_html/$file
                         fi
                     done
