@@ -113,12 +113,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Projects}
-\runsubsection{Self Hosted Jenkins Instance}
+\runsubsection{Self Hosted Jenkins}
 \descript{| \url{https://github.com/imbauer/JenkinsInDocker}}
 \begin{tightemize}
-\item Use docker-compose with a docker image for the jenkins-master, and a docker image for nginx to act as the reverse proxy in order to connect the docker containers to the outside world so that Github can see it
+\item Use docker-compose to deploy a jenkins instance, and an nginx reverse proxy in order to connect the docker containers to the outside world
 \item Setup a web-hook in my website's Github repository resulting in committed updates being automatically pushed to my website's FTP server based on the  \href{https://github.com/imbauer/PersonalWebsite/blob/master/Jenkinsfile}{\underline{Jenkinsfile}}
-\item Self host Jenkins Instance using ngrok to open a port tunnel
+\item Self host Jenkins Instance using serveo to open a port tunnel with public url \href{http://jenkinsindocker.serveo.net/}{\underline{jenkinsindocker.serveo.net/}}
+\item Purpose is to practice continuous deployment and to host a devops environment for group projects / hackathons
 \end{tightemize}
 \sectionsep
 
